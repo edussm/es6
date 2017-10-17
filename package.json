@@ -1,0 +1,28 @@
+{
+  "name": "es6-into",
+  "version": "1.0.0",
+  "description": "Exemplos ES6 (ECMAScript 2015)",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edussm/es6.git"
+  },
+  "keywords": [
+    "ES6",
+    "ECMASscript2015",
+    "ES2015"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edussm/es6/issues"
+  },
+  "homepage": "https://github.com/edussm/es6#readme",
+  "devDependencies": {
+    "eslint": "^3.14.0",
+    "nodemon": "^1.11.0"
+  }
+}
