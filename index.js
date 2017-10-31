@@ -1,59 +1,51 @@
-class Message {
-  constructor(text = '', created = Date.now()) {
-    this.text = text;
-    this.created = created;
+// Funcao
+function ehPar(numero) {
+  if (numero % 2 === 0) {
+    return true;
   }
-  get created() {
-    return this._created;
-  }
-  set created(created) {
-    if (typeof created === 'undefined' || isNaN(created)) {
-      throw new Error('Invalid created');
-    }
-    if (this.hasOwnProperty('_created')) {
-      throw new Error('Created already defined');
-    }
-    this._created = created;
-  }
-  toString() {
-    return `Message created at: ${this.created} - Text: ${this.text}`;
-  }
-  static newEmptyMessage() {
-    return new Message();
-  }
+  
+  return false;
 }
 
-/**
- * Exemplo de Herança
- * @extends {Message}
- */
-class ImageMessage extends Message {
-  constructor(text = '', created = Date.now(),
-              url = '', thumbnail = '') {
-    super(text, created);
-    this.url = url;
-    this.thumbnail = thumbnail;
-  }
+console.log(ehPar(2));
+console.log(ehPar(3));
 
-  /**
-   * Method overriden
-   * @returns String
-   */
-  toString() {
-    return `Photo${super.toString()} ` +
-           `- Url: ${this.url} ` +
-           `- Thumbnail: ${this.thumbnail}`;
-  }
+// loops
+for (let i = 0; i < 5; i++) {
+  console.log(i);
 }
 
-// Instancias
-var emptyMessage = Message.newEmptyMessage();
-var textMessage = new Message('Yesterday message', Date.now() - 86400);
-var photoMessage = new ImageMessage();
+let arr = ['Teste', 1, 2, 3, 'Olá'];
+for (let v of arr) {
+  console.log(v);
+}
 
-// Imprimindo Objetos
-console.log(emptyMessage);
-console.log(String(emptyMessage));
-console.log(String(textMessage));
-console.log(String(photoMessage));
-console.log(new Date(textMessage.created).toString());
+arr = [...'Boa Noite'];
+for (let v of arr) {
+  console.log(v);
+}
+
+// Classes
+var Jedi = require('./jedi.model');
+var Sith = require('./sith.model');
+
+let yoda = new Jedi('Yoda');
+console.log(String(yoda));
+console.log(yoda);
+
+let maul = new Sith('Darth Maul');
+console.log(String(maul));
+
+
+
+
+
+// Exercicio
+var Triangulo = require('./triangulo.model');
+let tri1 = new Triangulo([2,3,4]);
+console.log(String(tri1));
+
+var Retangulo = require('./retangulo.model');
+let ret1 = new Retangulo([2,4]);
+console.log(String(ret1));
+
